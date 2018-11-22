@@ -1,0 +1,19 @@
+.jumbotron{
+    height: 120px;;
+}
+
+/* .waitingArea{
+    height: 130px;
+} */
+
+.logo{
+    margin-bottom: -60px;
+    margin-left: -40px;
+}
+
+#fightCard{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+}
