@@ -200,10 +200,11 @@ $(".rey").dblclick(function () {
                     $(this).css("border", "none")
                 });
             }); 
-            $("#snokePlayer").on("click", function () {
+            $(".snokePlayer").on("click", function () {
                 $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 400</h4>');
             });
         }
+        stage++;
     }
 });
 
@@ -240,7 +241,7 @@ $(".finn").dblclick(function () {
         });
         if (stage === 1) {
             console.log("okay");
-            $("#reyPlayer").mouseover(function () {
+            $(".reyPlayer").mouseover(function () {
                 $(this).css("border", "4px solid red");
                 $(this).mouseout(function () {
                     $(this).css("border", "none")
@@ -252,10 +253,44 @@ $(".finn").dblclick(function () {
                     $(this).css("border", "none")
                 });
             });
-            $("#reyPlayer").on("click", function () {
+            $(".reyPlayer").on("click", function () {
                 $("#fightCard").html('<img class="card-img-top" src="assets/images/rey.png" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Rey</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Jakku</h4>' + '<h4>HP: 150</h4>');
             });
+            $("#capLogo").mouseover(function () {
+                $(this).css("border", "4px solid black");
+                $(this).mouseout(function () {
+                    $(this).css("border", "none")
+                });
+            });
+            $(".cap").mouseover(function () {
+                $(this).css("border", "4px solid black");
+                $(this).mouseout(function () {
+                    $(this).css("border", "none")
+                });
+            });
+            $(".logo2").on("click", function () {
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/logo2.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">First Order</h3>' + '<h4>The First Order is an autocratic military dictatorship. It is the canonical counterpart of the Dark Empire.<h4>');
+            });
+            $(".capPlayer").on("click", function () {
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/captain_phasma.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Captain Phasma</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Parnassos</h4>' + '<h4>HP: 300</h4>');
+            });
+            $("#snokeLogo").mouseover(function () {
+                $(this).css("border", "4px solid black");
+                $(this).mouseout(function () {
+                    $(this).css("border", "none")
+                });
+            });
+            $(".snoke").mouseover(function () {
+                $(this).css("border", "4px solid black");
+                $(this).mouseout(function () {
+                    $(this).css("border", "none")
+                });
+            });
+            $(".snokePlayer").on("click", function () {
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 400</h4>');
+            });
         }
+        stage++;
     }
 });
 
@@ -270,7 +305,7 @@ $(".cap").dblclick(function () {
         $(".playersInHolding3").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
         $(".pickPlayer").text("You Chose Captian Phasma");
         $(".pickOpponent").text("Choose Your Opponent");
-        // stage++;
+        stage++;
         // Needed to keep Captain Phasma Character interactive
         $("#capPlayer").mouseover(function () {
             $(this).css("border", "4px solid black");
@@ -292,58 +327,8 @@ $(".cap").dblclick(function () {
         });
         stage++;
         if(stage === 1){
-            $(".finn").mouseover(function () {
-                $(this).css("border", "4px solid red");
-                $(this).mouseout(function () {
-                    $(this).css("border", "none")
-                });
-            });
-            $(".finn").mouseover(function () {
-                $(this).css("border", "4px solid red");
-                $(this).mouseout(function () {
-                    $(this).css("border", "none")
-                });
-            });
-            $(".finn").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/finn.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Finn</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Artorias</h4>' + '<h4>HP: 200</h4>');
-            });
-            $("#reyLogo, #finnLogo").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/logo1.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">The Resistance</h3>' + '<h4> Resistance movement is a private paramilitary force led by General Leia Organa that opposes the First Order<h4>');
-            });
            
-            $("#reyPlayer").mouseover(function () {
-                $(this).css("border", "4px solid red");
-                $(this).mouseout(function () {
-                    $(this).css("border", "none")
-                });
-            });
-            $("#reyLogo").mouseover(function () {
-                $(this).css("border", "4px solid red");
-                $(this).mouseout(function () {
-                    $(this).css("border", "none")
-                });
-            });
-            $("#reyPlayer").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/rey.png" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Rey</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Jakku</h4>' + '<h4>HP: 150</h4>');
-            });
-            $(".snoke").mouseover(function () {
-                $(this).css("border", "4px solid black");
-                $(this).mouseout(function () {
-                    $(this).css("border", "none")
-                });
-            });
-            $("#snokeLogo").mouseover(function () {
-                $(this).css("border", "4px solid black");
-                $(this).mouseout(function () {
-                    $(this).css("border", "none")
-                });
-            });
-            $(".snoke").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 400</h4>');
-            });
-            $("#capLogo, #snokeLogo").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/logo2.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">First Order</h3>' + '<h4>The First Order is an autocratic military dictatorship. It is the canonical counterpart of the Dark Empire.<h4>');
-            });
+           
         }
         stage++;
     }
