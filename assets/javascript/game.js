@@ -185,6 +185,7 @@ $(".finn").dblclick(function () {
         $("#finnPlayer").on("click", function () {
             $("#fightCard").html('<img class="card-img-top" src="assets/images/finn.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Finn</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Artorias</h4>' + '<h4>HP: 200</h4>');
         });
+        snop123;
     }
 });
 
@@ -224,7 +225,7 @@ $(".cap").dblclick(function () {
 
 // Chosing Supreme Leader Snoke at the begaining of the game
 
-$(".snoke").dblclick(function () {
+var snop123 = $(".snoke").dblclick(function () {
     if (stage < 1) {
         $(".players").css("display", "none");
         $(".playersAtStart1").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img" id="snokePlayer">' + '<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players" id="snokeLogo">');
@@ -254,5 +255,5 @@ $(".snoke").dblclick(function () {
             $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 400</h4>');
         });
     }
-});
+});;
 
