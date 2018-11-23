@@ -136,5 +136,30 @@ $("#capLogo, #snokeLogo").on("click", function(){
     $("#fightCard").html('<img class="card-img-top" src="assets/images/logo2.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">First Order</h3>' + '<h4>The First Order is an autocratic military dictatorship. It is the canonical counterpart of the Dark Empire.<h4>');
 });
 
-// Pick a player send all other players to waiting area
+//variables needed to keep track of player pogress
+
+var stage = 0;
+
+// Chosen a player at the begaining of the game
+
+$(".rey").dblclick(function(){
+    if(stage < 1){
+    $(".players:not(.rey)").css("display", "none");
+    stage++;}
+});
+$(".finn").dblclick(function(){
+    if(stage < 1){
+    $(".players:not(.finn)").css("display", "none");
+    stage++;}
+});
+$(".cap").dblclick(function(){
+    if(stage < 1){
+    $(".players:not(.cap)").css("display", "none");
+    stage++;}
+});
+$(".snoke").dblclick(function(){
+    if(stage < 1){
+    $(".players:not(.snoke)").css("display", "none");
+    stage++;}
+});
 
