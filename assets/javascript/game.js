@@ -135,3 +135,6 @@ $("#reyLogo, #finnLogo").on("click", function(){
 $("#capLogo, #snokeLogo").on("click", function(){
     $("#fightCard").html('<img class="card-img-top" src="assets/images/logo2.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">First Order</h3>' + '<h4>The First Order is an autocratic military dictatorship. It is the canonical counterpart of the Dark Empire.<h4>');
 });
+
+// Pick a player send all other players to waiting area
+
