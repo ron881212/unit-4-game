@@ -72,7 +72,7 @@ $("#finnLogo").mouseover(function(){
     });
 });
 
-// Hover effeects over Phasma and Snoke
+// Hover effects over Phasma and Snoke
 
 $("#capPlayer").mouseover(function(){
     $(this).css("border", "4px solid black");
@@ -145,21 +145,54 @@ var stage = 0;
 $(".rey").dblclick(function(){
     if(stage < 1){
     $(".players:not(.rey)").css("display", "none");
-    stage++;}
-});
-$(".finn").dblclick(function(){
-    if(stage < 1){
-    $(".players:not(.finn)").css("display", "none");
-    stage++;}
-});
-$(".cap").dblclick(function(){
-    if(stage < 1){
-    $(".players:not(.cap)").css("display", "none");
-    stage++;}
-});
-$(".snoke").dblclick(function(){
-    if(stage < 1){
-    $(".players:not(.snoke)").css("display", "none");
+    $(".playersInHolding1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img" id="finnPlayer">' + '<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players" id="finnLogo">');
+    $(".playersInHolding2").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img" id="capPlayer">' + '<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players" id="capLogo">');
+    $(".playersInHolding3").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img" id="snokePlayer">' + '<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players" id="snokeLogo">');
     stage++;}
 });
 
+$(".finn").dblclick(function(){
+    if(stage < 1){
+    $(".players").css("display", "none");
+    $(".playersAtStart1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img" id="finnPlayer">' + '<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players" id="finnLogo">');
+    $(".playersInHolding1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img" id="reyPlayer">' + '<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players" id="reyLogo">');
+    $(".playersInHolding2").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img" id="capPlayer">' + '<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players" id="capLogo">');
+    $(".playersInHolding3").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img" id="snokePlayer">' + '<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players" id="snokeLogo">');
+    stage++;}
+});
+
+$(".cap").dblclick(function(){
+    if(stage < 1){
+    $(".players").css("display", "none");
+    $(".playersAtStart1").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img" id="capPlayer">' + '<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players" id="capLogo">');
+    $(".playersInHolding1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img" id="reyPlayer">' + '<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players" id="reyLogo">');
+    $(".playersInHolding2").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img" id="finnPlayer">' + '<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players" id="finnLogo">');
+    $(".playersInHolding3").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img" id="snokePlayer">' + '<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players" id="snokeLogo">');
+    stage++;}
+});
+
+$(".snoke").dblclick(function(){
+    if(stage < 1){
+    $(".players").css("display", "none");
+    $(".playersAtStart1").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img" id="snokePlayer">' + '<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players" id="snokeLogo">');
+    $(".playersInHolding1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img" id="reyPlayer">' + '<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players" id="reyLogo">');
+    $(".playersInHolding2").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img" id="finnPlayer">' + '<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players" id="finnLogo">');
+    $(".playersInHolding3").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img" id="capPlayer">' + '<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players" id="capLogo">');
+    stage++;}
+});
+
+$("#finnPlayer").mouseover(function(){
+    $(this).css("border", "4px solid red");
+    console.log("I made it to 1");
+    $(this).mouseout(function(){
+        $(this).css("border", "none")
+        console.log("I made it to 2");
+    });
+    console.log("I made it to 3");
+});
+$("#finnLogo").mouseover(function(){
+    $(this).css("border", "4px solid red");
+    $(this).mouseout(function(){
+        $(this).css("border", "none")
+    });
+});
