@@ -2,7 +2,7 @@
     font-family: 'Libre Franklin', sans-serif;
 }
 .jumbotron{
-    height: 120px;;
+    height: 175px;
 }
 
 .logo{
@@ -22,4 +22,23 @@
 .player-img{
     height: 120px;
     width: 120px;
+}
+
+.fightButton{
+    width: 100%;
+    font-size: 24px;
+    border-radius: 1px;
+}
+
+.playersAtStart1,
+.playersAtStart2,
+.playersAtStart3,
+.playersAtStart4{
+    position: relative;
+}
+
+.badge-pill{
+    position: absolute;
+    top: 20px;
+    right: 50px;
 }

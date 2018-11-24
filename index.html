@@ -18,14 +18,15 @@
 
 <body>
 
-    <!-- Instructions for the game -->
+    <!-- Instructions for the game pt-0 mb-0-->
 
-    <div class="jumbotron pt-0 mb-0">
-        <h1 class="display-4 text">StarWars RPG</h1>
-        <p class="lead text">Choose your hero.  In this battle royale you start off with 150 HP and must defeat all other characters to win.</p>
+    <div class="jumbotron pt-0 mb-0 px-0">
+        <h1 class="display-4 text text-center">StarWars RPG</h1>
+        <p class="lead text text-center">Choose your hero.  In this battle royale you must defeat all other characters to win.</p>
+        <a class="btn btn-primary btn-lg fightButton disabled" onclick="fight()" href="#" role="button">Attack</a>
     </div>
 
-    <h2 class="pickPlayer">Choose your player</h2>
+    <h2 class="pickPlayer text">Choose your player</h2>
 
     <!-- This row will respresent "Picking Your Character at the start of the game" -->
 
@@ -33,18 +34,22 @@
         <div class="row">
             <div class="col-md-2 playersAtStart1">
                 <img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">
+                <span class="badge badge-pill badge-danger rey players">150</span>
                 <img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 playersAtStart2">
                 <img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">
+                <span class="badge badge-pill badge-danger finn players">200</span>
                 <img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 playersAtStart3">
                 <img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">
+                <span class="badge badge-pill badge-dark cap players">300</span>
                 <img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 playersAtStart4">
                 <img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">
+                <span class="badge badge-pill badge-dark snoke players">400</span>
                 <img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">
             </div>
             <div class="col-md-4">
