@@ -1,10 +1,9 @@
+.text{
+    font-family: 'Libre Franklin', sans-serif;
+}
 .jumbotron{
     height: 120px;;
 }
-
-/* .waitingArea{
-    height: 130px;
-} */
 
 .logo{
     height: 60px;
