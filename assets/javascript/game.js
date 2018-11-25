@@ -49,57 +49,36 @@ $(".snokeHp").text(playerSnoke.hp);
 
 // Fight function should return attack vaule
 
-function fight(attacker, defender){
-    // $(".reyHp").text(playerRey.hp);
-    // $(".finnHp").text(playerFinn.hp);
-    // $(".capHp").text(playerPhasma.hp);
-    // $(".snokeHp").text(playerSnoke.hp);
+function fight(attacker, defender, defender2, attacker2){
 
-    var playerRey = {
-        name: "Rey",
-        gender: "Female",
-        affiliation: "Resistance",
-        homeworld: "Jakku",
-        counterAp: 20,
-        hp: 150,
-        ap: 12
-    };
+    // attacker = playerRey.hp;
+    // defender = playerFinn.ap;
     
-    var playerFinn = {
-        name: "Finn",
-        gender: "Male",
-        affiliation: "Resistance",
-        homeworld: "Artorias",
-        counterAp: 25,
-        hp: 200,
-        ap: 15
-    };
-    
-    var playerPhasma = {
-        name: "Captain Phasma",
-        gender: "Female",
-        affiliation: "First Order",
-        homeworld: "Parnassos",
-        counterAp: 30,
-        hp: 250,
-        ap: 18
-    };
-    
-    var playerSnoke = {
-        name: "Supreme Leader Snoke",
-        gender: "Male",
-        affiliation: "First Order",
-        homeworld: "Unknown",
-        counterAp: 35,
-        hp: 300,
-        ap: 22
-    };
+    yourHp = attacker - defender;
+    opponHp = defender2 - attacker2;
 
-    attacker = attacker.hp;
-    defender = defender.ap;
-    var answer = attacker - defender;
+    playerRey.hp = yourHp;
+    playerFinn.hp = yourHp;
+    playerPhasma.hp = yourHp;
+    playerSnoke.hp = yourHp;
 
-    console.log(answer);
+    playerRey.hp = opponHp;
+    playerFinn.hp = opponHp;
+    playerSnoke.hp = opponHp;
+    playerPhasma.hp = opponHp;
+
+    var group = [playerRey.hp, playerFinn.hp, playerPhasma.hp, playerSnoke.hp];
+
+    $(".reyHp").text(playerRey.hp);
+    $(".finnHp").text(playerFinn.hp);
+    $(".capHp").text(playerPhasma.hp);
+    $(".snokeHp").text(playerSnoke.hp);
+   
+    return group[0,1,2,3];
+    // console.log(you);
+    // // console.log(attacker);
+    // // return playerRey.hp;
+    // return playerRey;
 }
 
 // Hover effects over Rey and Finn including logos
@@ -277,7 +256,8 @@ $(".rey").dblclick(function () {
             $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 12 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 25 Damage<h4>' + '<h4>Fight Stats Here</h4>');
             $(".fightButton").removeClass("disabled");
             $(".fightButton").on("click", function(){
-                fight(playerRey, playerFinn);
+                fight(playerRey.hp, playerFinn.counterAp, playerFinn.hp, playerRey.ap);
+                
             });
             });
         }
@@ -292,6 +272,7 @@ $(".rey").dblclick(function () {
             $(".playersInHolding1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
             $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 12 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Phasma Deals 30 Damage<h4>' + '<h4>Fight Stats Here</h4>');
             $(".fightButton").removeClass("disabled");
+            fight(playerRey.hp, playerPhasma.counterAp, playerPhasma.hp, playerRey.ap);
             });   
         }
         // Rey fighting Snoke
