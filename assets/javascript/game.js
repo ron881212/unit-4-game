@@ -313,7 +313,7 @@ $(".rey").dblclick(function () {
                     $(".fightButton").addClass('disabled');
                     $(".fightButton").text("Choose next opponent");
 
-                    
+
                 }
             });
             });
@@ -830,10 +830,10 @@ function ReyfightingSnokeAfterCap(){
             $(".cap").css("display", "none");
             $(".fightButton").addClass('disabled');
             $(".fightButton").text('You Won');
-        } else if(playerPhasma.hp < 1){
-            playerPhasma.hp = 0;
-            $(".capHp").text(playerPhasma.hp);
-            $(".cap").css("display", "none");
+        } else if(playerSnoke.hp < 1){
+            playerSnoke.hp = 0;
+            $(".snokeHp").text(playerSnoke.hp);
+            $(".snoke").css("display", "none");
             $(".fightButton").addClass('disabled');
             $(".fightButton").text("Choose next opponent");        
         } 
