@@ -3,6 +3,7 @@
 }
 .jumbotron{
     height: 175px;
+    /* background-color: #199f92; */
 }
 
 .logo{
@@ -28,6 +29,7 @@
     width: 100%;
     font-size: 24px;
     border-radius: 1px;
+    /* background-color: #092624; */
 }
 
 .playersAtStart1,
@@ -41,4 +43,8 @@
     position: absolute;
     top: 20px;
     right: 50px;
+}
+
+body {
+    /* background-color: #199f92;  */
 }

@@ -7,7 +7,7 @@ var playerRey = {
     homeworld: "Jakku",
     counterAp: 20,
     hp: 150,
-    ap: 12
+    ap: 300
 };
 
 var playerFinn = {
@@ -15,7 +15,7 @@ var playerFinn = {
     gender: "Male",
     affiliation: "Resistance",
     homeworld: "Artorias",
-    counterAp: 25,
+    counterAp: 12,
     hp: 200,
     ap: 15
     
@@ -26,7 +26,7 @@ var playerPhasma = {
     gender: "Female",
     affiliation: "First Order",
     homeworld: "Parnassos",
-    counterAp: 30,
+    counterAp: 12,
     hp: 250,
     ap: 18
 };
@@ -36,7 +36,7 @@ var playerSnoke = {
     gender: "Male",
     affiliation: "First Order",
     homeworld: "Unknown",
-    counterAp: 35,
+    counterAp: 12,
     hp: 300,
     ap: 22
 };
@@ -50,35 +50,79 @@ $(".snokeHp").text(playerSnoke.hp);
 // Fight function should return attack vaule
 
 function fight(attacker, defender, defender2, attacker2){
+    // If the user is Rey
+    if(attacker === playerRey.hp){    
+        yourHp = attacker - defender;
+        opponHp = defender2 - attacker2;
+        playerRey.hp = yourHp;
+        if(defender2 === playerFinn.hp){
+            playerFinn.hp = opponHp;
+        } else if(defender2 === playerPhasma.hp){
+            playerPhasma.hp = opponHp;     
+        } else if(defender2 === playerSnoke.hp){
+            playerSnoke.hp = opponHp;}  
+        $(".reyHp").text(playerRey.hp);
+        $(".finnHp").text(playerFinn.hp);
+        $(".capHp").text(playerPhasma.hp);
+        $(".snokeHp").text(playerSnoke.hp);
+        var group = [playerRey.hp, playerFinn.hp, playerPhasma.hp, playerSnoke.hp];
+        return group[0,1,2,3];
+    }
+    // If the user is Finn
+    if(attacker === playerFinn.hp){    
+        yourHp = attacker - defender;
+        opponHp = defender2 - attacker2;
+        playerFinn.hp = yourHp;
+        if(defender2 === playerRey.hp){
+            playerRey.hp = opponHp;
+        } else if(defender2 === playerPhasma.hp){
+            playerPhasma.hp = opponHp;     
+        } else if(defender2 === playerSnoke.hp){
+            playerSnoke.hp = opponHp;}
+        $(".reyHp").text(playerRey.hp);
+        $(".finnHp").text(playerFinn.hp);
+        $(".capHp").text(playerPhasma.hp);
+        $(".snokeHp").text(playerSnoke.hp);
+        var group = [playerRey.hp, playerFinn.hp, playerPhasma.hp, playerSnoke.hp];
+        return group[0,1,2,3];
+    }
+    // If the user is Phasma
+    if(attacker === playerPhasma.hp){    
+        yourHp = attacker - defender;
+        opponHp = defender2 - attacker2;
+        playerPhasma.hp = yourHp;
+        if(defender2 === playerFinn.hp){
+            playerFinn.hp = opponHp;
+        } else if(defender2 === playerRey.hp){
+            playerRey.hp = opponHp;     
+        } else if(defender2 === playerSnoke.hp){
+            playerSnoke.hp = opponHp;}
+        $(".reyHp").text(playerRey.hp);
+        $(".finnHp").text(playerFinn.hp);
+        $(".capHp").text(playerPhasma.hp);
+        $(".snokeHp").text(playerSnoke.hp);
+        var group = [playerRey.hp, playerFinn.hp, playerPhasma.hp, playerSnoke.hp];
+        return group[0,1,2,3];
+    }
+    // If the user is Snoke
+    if(attacker === playerSnoke.hp){    
+        yourHp = attacker - defender;
+        opponHp = defender2 - attacker2;
+        playerSnoke.hp = yourHp;
+        if(defender2 === playerFinn.hp){
+            playerFinn.hp = opponHp;
+        } else if(defender2 === playerPhasma.hp){
+            playerPhasma.hp = opponHp;     
+        } else if(defender2 === playerRey.hp){
+            playerRey.hp = opponHp;}
+        $(".reyHp").text(playerRey.hp);
+        $(".finnHp").text(playerFinn.hp);
+        $(".capHp").text(playerPhasma.hp);
+        $(".snokeHp").text(playerSnoke.hp);
+        var group = [playerRey.hp, playerFinn.hp, playerPhasma.hp, playerSnoke.hp];
+        return group[0,1,2,3];
+    }
 
-    // attacker = playerRey.hp;
-    // defender = playerFinn.ap;
-    
-    yourHp = attacker - defender;
-    opponHp = defender2 - attacker2;
-
-    playerRey.hp = yourHp;
-    playerFinn.hp = yourHp;
-    playerPhasma.hp = yourHp;
-    playerSnoke.hp = yourHp;
-
-    playerRey.hp = opponHp;
-    playerFinn.hp = opponHp;
-    playerSnoke.hp = opponHp;
-    playerPhasma.hp = opponHp;
-
-    var group = [playerRey.hp, playerFinn.hp, playerPhasma.hp, playerSnoke.hp];
-
-    $(".reyHp").text(playerRey.hp);
-    $(".finnHp").text(playerFinn.hp);
-    $(".capHp").text(playerPhasma.hp);
-    $(".snokeHp").text(playerSnoke.hp);
-   
-    return group[0,1,2,3];
-    // console.log(you);
-    // // console.log(attacker);
-    // // return playerRey.hp;
-    // return playerRey;
 }
 
 // Hover effects over Rey and Finn including logos
@@ -152,13 +196,13 @@ $("#finnPlayer").on("click", function () {
 // Displays Phasma info when you click on her
 
 $("#capPlayer").on("click", function () {
-    $("#fightCard").html('<img class="card-img-top" src="assets/images/captain_phasma.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Captain Phasma</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Parnassos</h4>' + '<h4>HP: 300</h4>');
+    $("#fightCard").html('<img class="card-img-top" src="assets/images/captain_phasma.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Captain Phasma</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Parnassos</h4>' + '<h4>HP: 250</h4>');
 });
 
 // Displays Surpreme Leader Snoke info when you click on him
 
 $("#snokePlayer").on("click", function () {
-    $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 400</h4>');
+    $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 300</h4>');
 });
 
 //Displays The Resistances info when you click on the logo
@@ -221,7 +265,7 @@ $(".rey").dblclick(function () {
                 });
             });
             $(".cap").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/captain_phasma.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Captain Phasma</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Parnassos</h4>' + '<h4>HP: 300</h4>');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/captain_phasma.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Captain Phasma</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Parnassos</h4>' + '<h4>HP: 250</h4>');
             });
             $(".logo2").on("click", function () {
                 $("#fightCard").html('<img class="card-img-top" src="assets/images/logo2.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">First Order</h3>' + '<h4>The First Order is an autocratic military dictatorship. It is the canonical counterpart of the Dark Empire.<h4>');
@@ -239,14 +283,13 @@ $(".rey").dblclick(function () {
                 });
             });
             $(".snokePlayer").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 400</h4>');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 300</h4>');
             });
             stage++;
         }
         // Rey fighting Finn
         if(stage === 2){
             $(".finnPlayer").dblclick(function(){
-            stage++;
             $(".finn").css("display", "none");
             $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn"  class="img-thumbnail rounded-circle finn players player-img finnPlayer"  id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1"  class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
             $(".cap").css("display", "none");
@@ -257,14 +300,27 @@ $(".rey").dblclick(function () {
             $(".fightButton").removeClass("disabled");
             $(".fightButton").on("click", function(){
                 fight(playerRey.hp, playerFinn.counterAp, playerFinn.hp, playerRey.ap);
-                
+                if(playerRey.hp < 1){
+                    playerRey.hp = 0;
+                    $(".reyHp").text(playerRey.hp);
+                    $(".fightButton").addClass('disabled');
+                    $(".fightButton").text("Game Over");
+                } else if(playerPhasma.hp < 1 && playerFinn.hp < 1 && playerSnoke.hp < 1){
+                    $(".fightButton").addClass('disabled');
+                    $(".fightButton").text('You Won');
+                } else if(playerFinn.hp < 1){
+                    $(".finn").css("display", "none");
+                    $(".fightButton").addClass('disabled');
+                    $(".fightButton").text("Choose next opponent");
+
+                    
+                }
             });
             });
         }
         // Rey fighing Captain Phasma
         if(stage === 2){
             $(".capPlayer").dblclick(function () {
-            stage++;
             $(".cap").css("display", "none");
             $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
             $(".snoke").css("display", "none");
@@ -272,13 +328,26 @@ $(".rey").dblclick(function () {
             $(".playersInHolding1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
             $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 12 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Phasma Deals 30 Damage<h4>' + '<h4>Fight Stats Here</h4>');
             $(".fightButton").removeClass("disabled");
+            $(".fightButton").on("click", function(){
             fight(playerRey.hp, playerPhasma.counterAp, playerPhasma.hp, playerRey.ap);
+            if(playerRey.hp < 1){
+                playerRey.hp = 0;
+                $(".reyHp").text(playerRey.hp);
+                $(".fightButton").addClass('disabled');
+                $(".fightButton").text("Game Over");
+            } else if(playerPhasma.hp < 1){
+                $(".cap").css("display", "none");
+                $(".fightButton").addClass('disabled');
+                $(".fightButton").text("Choose next opponent");
+                ReyfightingFinnAfterCap();
+                ReyfightingSnokeAfterCap();
+            }
+            });   
             });   
         }
         // Rey fighting Snoke
         if(stage === 2){
             $(".snokePlayer").dblclick(function () {
-                stage++;
                 $(".snoke").css("display", "none");
                 $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
                 $(".finn").css("display", "none");
@@ -286,10 +355,31 @@ $(".rey").dblclick(function () {
                 $(".cap").css("display", "none");
                 $(".playersInHolding2").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
                 $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 12 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 35 Damage<h4>' + '<h4>Fight Stats Here</h4>');$(".fightButton").removeClass("disabled");
+                $(".fightButton").on("click", function(){
+                fight(playerRey.hp, playerSnoke.counterAp, playerSnoke.hp, playerRey.ap);
+                if(playerRey.hp < 1){
+                    playerRey.hp = 0;
+                    $(".reyHp").text(playerRey.hp);
+                    $(".fightButton").addClass('disabled');
+                    $(".fightButton").text("Game Over");
+                } else if(playerSnoke.hp < 1){
+                    $(".snoke").css("display", "none");
+                    $(".fightButton").addClass('disabled');
+                    $(".fightButton").text("Choose next opponent");
+                    ReyfightingFinnAfterSnoke();
+                    ReyfightingCapAfterSnoke();
+                    if(playerPhasma.hp < 1 && playerFinn < 1){
+                        $(".fightButton").addClass('disabled');
+                        $(".fightButton").text('You Won');
+                    }
+                }
+                });
             });
         }
     }
+    
 });
+
 
 // Chosing Finn at the begaining of the game
 
@@ -302,25 +392,6 @@ $(".finn").dblclick(function () {
         $(".playersInHolding3").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img   src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
         $(".pickPlayer").text("You Chose Finn");
         $(".pickOpponent").text("Choose Your Opponent");
-        // Needed to keep Finn Character interactive 
-        // $(".finn").mouseover(function () {
-        //     $(this).css("border", "4px solid red");
-        //     $(this).mouseout(function () {
-        //         $(this).css("border", "none")
-        //     });
-        // });
-        // $(".finn").mouseover(function () {
-        //     $(this).css("border", "4px solid red");
-        //     $(this).mouseout(function () {
-        //         $(this).css("border", "none")
-        //     });
-        // });
-        // $("#reyLogo, #finnLogo").on("click", function () {
-        //     $("#fightCard").html('<img class="card-img-top" src="assets/images/logo1.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">The Resistance</h3>' + '<h4> Resistance movement is a private paramilitary force led by General Leia Organa that opposes the First Order<h4>');
-        // });
-        // $("#finnPlayer").on("click", function () {
-        //     $("#fightCard").html('<img class="card-img-top" src="assets/images/finn.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Finn</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Artorias</h4>' + '<h4>HP: 200</h4>');
-        // });
         stage++;
         if (stage === 1) {
             console.log("okay");
@@ -355,7 +426,7 @@ $(".finn").dblclick(function () {
                 $("#fightCard").html('<img class="card-img-top" src="assets/images/logo2.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">First Order</h3>' + '<h4>The First Order is an autocratic military dictatorship. It is the canonical counterpart of the Dark Empire.<h4>');
             });
             $(".capPlayer").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/captain_phasma.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Captain Phasma</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Parnassos</h4>' + '<h4>HP: 300</h4>');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/captain_phasma.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Captain Phasma</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Parnassos</h4>' + '<h4>HP: 250</h4>');
             });
             $("#snokeLogo").mouseover(function () {
                 $(this).css("border", "4px solid black");
@@ -370,7 +441,7 @@ $(".finn").dblclick(function () {
                 });
             });
             $(".snokePlayer").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 400</h4>');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 300</h4>');
             });
             stage++;
         }
@@ -430,25 +501,6 @@ $(".cap").dblclick(function () {
         $(".playersInHolding3").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
         $(".pickPlayer").text("You Chose Captian Phasma");
         $(".pickOpponent").text("Choose Your Opponent");
-        // Needed to keep Captain Phasma Character interactive
-        // $("#capPlayer").mouseover(function () {
-        //     $(this).css("border", "4px solid black");
-        //     $(this).mouseout(function () {
-        //         $(this).css("border", "none")
-        //     });
-        // });
-        // $("#capLogo").mouseover(function () {
-        //     $(this).css("border", "4px solid black");
-        //     $(this).mouseout(function () {
-        //         $(this).css("border", "none")
-        //     });
-        // });
-        // $("#capLogo, #snokeLogo").on("click", function () {
-        //     $("#fightCard").html('<img class="card-img-top" src="assets/images/logo2.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">First Order</h3>' + '<h4>The First Order is an autocratic military dictatorship. It is the canonical counterpart of the Dark Empire.<h4>');
-        // });
-        // $("#capPlayer").on("click", function () {
-        //     $("#fightCard").html('<img class="card-img-top" src="assets/images/captain_phasma.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Captain Phasma</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Parnassos</h4>' + '<h4>HP: 300</h4>');
-        // });
         stage++;
         if (stage === 1) {
             console.log("made it");
@@ -465,7 +517,7 @@ $(".cap").dblclick(function () {
                 });
             });
             $(".snokePlayer").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 400</h4>');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 300</h4>');
             });
             $(".finn").mouseover(function () {
                 $(this).css("border", "4px solid red");
@@ -562,26 +614,6 @@ $(".snoke").dblclick(function () {
         $(".playersInHolding3").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
         $(".pickPlayer").text("You Chose Supreme Leader Snoke");
         $(".pickOpponent").text("Choose Your Opponent");
-
-        // Needed to keep Snoke Character interactive
-        // $("#snokePlayer").mouseover(function () {
-        //     $(this).css("border", "4px solid black");
-        //     $(this).mouseout(function () {
-        //         $(this).css("border", "none")
-        //     });
-        // });
-        // $("#snokeLogo").mouseover(function () {
-        //     $(this).css("border", "4px solid black");
-        //     $(this).mouseout(function () {
-        //         $(this).css("border", "none")
-        //     });
-        // });
-        // $("#capLogo, #snokeLogo").on("click", function () {
-        //     $("#fightCard").html('<img class="card-img-top" src="assets/images/logo2.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">First Order</h3>' + '<h4>The First Order is an autocratic military dictatorship. It is the canonical counterpart of the Dark Empire.<h4>');
-        // });
-        // $("#snokePlayer").on("click", function () {
-        //     $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 400</h4>');
-        // });
         stage++;
         if (stage === 1) {
             console.log("2nd snoke stage");
@@ -631,7 +663,7 @@ $(".snoke").dblclick(function () {
                 });
             });
             $(".capPlayer").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/captain_phasma.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Captain Phasma</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Parnassos</h4>' + '<h4>HP: 300</h4>');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/captain_phasma.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Captain Phasma</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Parnassos</h4>' + '<h4>HP: 250</h4>');
             });
             stage++;
         }
@@ -682,3 +714,131 @@ $(".snoke").dblclick(function () {
 });
 
 console.log("1st stage");
+
+function ReyfightingFinnAfterSnoke(){
+    $(".finnPlayer").dblclick(function(){
+        $(".finn").css("display", "none");
+        $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn"  class="img-thumbnail rounded-circle finn players player-img finnPlayer"  id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1"  class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+        $(".cap").css("display", "none");
+        $(".playersInHolding1").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 12 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 25 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".fightButton").removeClass("disabled");
+        $(".fightButton").text("Attack");
+        if(playerPhasma.hp < 1){
+            $(".cap").css("display", "none");
+        }
+        $(".fightButton").on("click", function(){
+            fight(playerRey.hp, playerFinn.counterAp, playerFinn.hp, playerRey.ap);
+            if(playerRey.hp < 1){
+                playerRey.hp = 0;
+                $(".reyHp").text(playerRey.hp);
+                $(".fightButton").addClass('disabled');
+                $(".fightButton").text("Game Over");
+            } else if(playerPhasma.hp < 1 && playerFinn.hp < 1 && playerSnoke.hp < 1){
+                $(".finn").css("display", "none");
+                $(".fightButton").addClass('disabled');
+                $(".fightButton").text('You Won');
+            } else if(playerFinn.hp < 1){
+                playerFinn.hp = 0;
+                $(".finnHp").text(playerFinn.hp);
+                $(".finn").css("display", "none");
+                $(".fightButton").addClass('disabled');
+                $(".fightButton").text("Choose next opponent");
+            } 
+        });
+    });
+}
+
+function ReyfightingCapAfterSnoke(){
+    $(".finnPlayer").dblclick(function () {
+        $(".finn").css("display", "none");
+        $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 12 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Phasma Deals 30 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".fightButton").removeClass("disabled");
+        $(".fightButton").text("Attack");
+        $(".fightButton").on("click", function(){
+        fight(playerRey.hp, playerPhasma.counterAp, playerPhasma.hp, playerRey.ap);
+        if(playerRey.hp < 1){
+            playerRey.hp = 0;
+            $(".reyHp").text(playerRey.hp);
+            $(".fightButton").addClass('disabled');
+            $(".fightButton").text("Game Over");
+        } else if(playerPhasma.hp < 1 && playerFinn.hp < 1 && playerSnoke.hp < 1){
+            $(".cap").css("display", "none");
+            $(".fightButton").addClass('disabled');
+            $(".fightButton").text('You Won');
+        } else if(playerPhasma.hp < 1){
+            playerPhasma.hp = 0;
+            $(".capHp").text(playerPhasma.hp);
+            $(".cap").css("display", "none");
+            $(".fightButton").addClass('disabled');
+            $(".fightButton").text("Choose next opponent");        
+        } 
+        });   
+    });   
+}
+
+function ReyfightingFinnAfterCap(){
+    $(".finnPlayer").dblclick(function(){
+        $(".finn").css("display", "none");
+        $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn"  class="img-thumbnail rounded-circle finn players player-img finnPlayer"  id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1"  class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+        $(".snoke").css("display", "none");
+        $(".playersInHolding1").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 12 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 25 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".fightButton").removeClass("disabled");
+        $(".fightButton").text("Attack");
+        if(playerSnoke.hp < 1){
+            $(".snoke").css("display", "none");
+        }
+        $(".fightButton").on("click", function(){
+            fight(playerRey.hp, playerFinn.counterAp, playerFinn.hp, playerRey.ap);
+            if(playerRey.hp < 1){
+                playerRey.hp = 0;
+                $(".reyHp").text(playerRey.hp);
+                $(".fightButton").addClass('disabled');
+                $(".fightButton").text("Game Over");
+            } else if(playerPhasma.hp < 1 && playerFinn.hp < 1 && playerSnoke.hp < 1){
+                $(".finn").css("display", "none");
+                $(".fightButton").addClass('disabled');
+                $(".fightButton").text('You Won');
+            } else if(playerFinn.hp < 1){
+                playerFinn.hp = 0;
+                $(".finnHp").text(playerFinn.hp);
+                $(".finn").css("display", "none");
+                $(".fightButton").addClass('disabled');
+                $(".fightButton").text("Choose next opponent");
+            } 
+        });
+    });
+}
+
+function ReyfightingSnokeAfterCap(){
+    $(".snokePlayer").dblclick(function () {
+        $(".snoke").css("display", "none");
+        $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 12 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 35 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".fightButton").removeClass("disabled");
+        $(".fightButton").text("Attack");
+        $(".fightButton").on("click", function(){
+        fight(playerRey.hp, playerSnoke.counterAp, playerSnoke.hp, playerRey.ap);
+        if(playerRey.hp < 1){
+            playerRey.hp = 0;
+            $(".reyHp").text(playerRey.hp);
+            $(".fightButton").addClass('disabled');
+            $(".fightButton").text("Game Over");
+        } else if(playerPhasma.hp < 1 && playerFinn.hp < 1 && playerSnoke.hp < 1){
+            $(".cap").css("display", "none");
+            $(".fightButton").addClass('disabled');
+            $(".fightButton").text('You Won');
+        } else if(playerPhasma.hp < 1){
+            playerPhasma.hp = 0;
+            $(".capHp").text(playerPhasma.hp);
+            $(".cap").css("display", "none");
+            $(".fightButton").addClass('disabled');
+            $(".fightButton").text("Choose next opponent");        
+        } 
+        });   
+    });   
+}
+
+
