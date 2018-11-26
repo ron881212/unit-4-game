@@ -750,8 +750,8 @@ function ReyfightingFinnAfterSnoke(){
 }
 
 function ReyfightingCapAfterSnoke(){
-    $(".finnPlayer").dblclick(function () {
-        $(".finn").css("display", "none");
+    $(".capPlayer").dblclick(function () {
+        $(".cap").css("display", "none");
         $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
         $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 12 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Phasma Deals 30 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
