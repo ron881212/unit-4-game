@@ -313,9 +313,7 @@ $(".rey").dblclick(function () {
                     $(".fightButton").addClass('disabled');
                     $(".fightButton").text("Choose next opponent");
                     stage++;
-                    console.log("here");
                     if(stage === 3){
-                        console.log("no here");
                         ReyfightingCapAfterFinn();
                         ReyfightingSnokeAfterFinn();
                     }
@@ -341,12 +339,16 @@ $(".rey").dblclick(function () {
                 $(".reyHp").text(playerRey.hp);
                 $(".fightButton").addClass('disabled');
                 $(".fightButton").text("Game Over");
-            } else if(playerPhasma.hp < 1){
+            } else if(playerPhasma.hp < 1 && stage === 2){
                 $(".cap").css("display", "none");
                 $(".fightButton").addClass('disabled');
                 $(".fightButton").text("Choose next opponent");
-                ReyfightingFinnAfterCap();
-                ReyfightingSnokeAfterCap();
+                stage++;
+                if(stage === 3){
+                    ReyfightingFinnAfterCap();
+                    ReyfightingSnokeAfterCap();
+                }
+                
             }
             });   
             });   
@@ -368,12 +370,15 @@ $(".rey").dblclick(function () {
                     $(".reyHp").text(playerRey.hp);
                     $(".fightButton").addClass('disabled');
                     $(".fightButton").text("Game Over");
-                } else if(playerSnoke.hp < 1){
+                } else if(playerSnoke.hp < 1 && stage === 2){
                     $(".snoke").css("display", "none");
                     $(".fightButton").addClass('disabled');
                     $(".fightButton").text("Choose next opponent");
-                    ReyfightingFinnAfterSnoke();
-                    ReyfightingCapAfterSnoke();
+                    stage++;
+                    if(stage === 3){
+                        ReyfightingFinnAfterSnoke();
+                        ReyfightingCapAfterSnoke();
+                    }
                 }
                 });
             });
@@ -466,10 +471,12 @@ $(".finn").dblclick(function () {
                     $(".finnHp").text(playerFinn.hp);
                     $(".fightButton").addClass('disabled');
                     $(".fightButton").text("Game Over");
-                } else if(playerRey.hp < 1){
+                } else if(playerRey.hp < 1 && stage === 2){
                     $(".rey").css("display", "none");
                     $(".fightButton").addClass('disabled');
                     $(".fightButton").text("Choose next opponent");
+                    stage++;
+                    if(stage === 3)
                     finnFightingCapAfterRey();
                     finnFightingSnokeAfterRey();
                 }
@@ -496,12 +503,15 @@ $(".finn").dblclick(function () {
                     $(".finnHp").text(playerFinn.hp);
                     $(".fightButton").addClass('disabled');
                     $(".fightButton").text("Game Over");
-                } else if(playerPhasma.hp < 1){
+                } else if(playerPhasma.hp < 1 && stage === 2){
                     $(".cap").css("display", "none");
                     $(".fightButton").addClass('disabled');
                     $(".fightButton").text("Choose next opponent");
-                    finnFightingReyAfterCap();
-                    finnFightingSnokeAfterCap();
+                    stage++;
+                    if(stage === 3){
+                        finnFightingReyAfterCap();
+                        finnFightingSnokeAfterCap();
+                    } 
                 }
                 });
             });   
@@ -525,12 +535,15 @@ $(".finn").dblclick(function () {
                         $(".finnHp").text(playerFinn.hp);
                         $(".fightButton").addClass('disabled');
                         $(".fightButton").text("Game Over");
-                    } else if(playerSnoke.hp < 1){
+                    } else if(playerSnoke.hp < 1 && stage === 2){
                         $(".snoke").css("display", "none");
                         $(".fightButton").addClass('disabled');
                         $(".fightButton").text("Choose next opponent");
-                        finnFightingCapAfterSnoke();
-                        finnFightingReyAfterSnoke();
+                        stage++;
+                        if(stage === 3){
+                            finnFightingCapAfterSnoke();
+                            finnFightingReyAfterSnoke();
+                        }
                     }
                 });
             });
@@ -841,6 +854,10 @@ function ReyfightingFinnAfterSnoke(){
                 $(".finn").css("display", "none");
                 $(".fightButton").addClass('disabled');
                 $(".fightButton").text("Choose next opponent");
+                stage++;
+                if(stage === 4){
+                    ReyfightingCapAfterSnoke();
+                }
             } 
         });
     });
@@ -869,7 +886,11 @@ function ReyfightingCapAfterSnoke(){
             $(".capHp").text(playerPhasma.hp);
             $(".cap").css("display", "none");
             $(".fightButton").addClass('disabled');
-            $(".fightButton").text("Choose next opponent");        
+            $(".fightButton").text("Choose next opponent");   
+            stage++;
+            if(stage === 4){
+                ReyfightingFinnAfterSnoke();
+            }     
         } 
         });   
     });   
@@ -904,6 +925,10 @@ function ReyfightingFinnAfterCap(){
                 $(".finn").css("display", "none");
                 $(".fightButton").addClass('disabled');
                 $(".fightButton").text("Choose next opponent");
+                stage++;
+                if(stage === 4){
+                    ReyfightingSnokeAfterCap();
+                }
             } 
         });
     });
@@ -932,7 +957,11 @@ function ReyfightingSnokeAfterCap(){
             $(".snokeHp").text(playerSnoke.hp);
             $(".snoke").css("display", "none");
             $(".fightButton").addClass('disabled');
-            $(".fightButton").text("Choose next opponent");        
+            $(".fightButton").text("Choose next opponent");      
+            stage++;
+            if(stage === 4){
+                ReyfightingFinnAfterCap();
+            }  
         } 
         });   
     });   
@@ -968,6 +997,9 @@ function ReyfightingCapAfterFinn(){
                 $(".fightButton").addClass('disabled');
                 $(".fightButton").text("Choose next opponent");
                 stage++;
+                if(stage === 4){
+                    ReyfightingSnokeAfterFinn();
+                }
             } 
         });
     });
@@ -997,7 +1029,10 @@ function ReyfightingSnokeAfterFinn(){
             $(".snoke").css("display", "none");
             $(".fightButton").addClass('disabled');
             $(".fightButton").text("Choose next opponent"); 
-            stage++;    
+            stage++;  
+            if(stage === 4){
+                ReyfightingCapAfterFinn();
+            }  
         } 
         });   
     });   
@@ -1034,6 +1069,10 @@ function finnFightingCapAfterRey(){
                 $(".cap").css("display", "none");
                 $(".fightButton").addClass('disabled');
                 $(".fightButton").text("Choose next opponent");
+                stage++;
+                if(stage === 4){
+                    finnFightingSnokeAfterRey();
+                }
             } 
         });
     });
@@ -1062,7 +1101,11 @@ function finnFightingSnokeAfterRey(){
             $(".snokeHp").text(playerPhasma.hp);
             $(".snoke").css("display", "none");
             $(".fightButton").addClass('disabled');
-            $(".fightButton").text("Choose next opponent");        
+            $(".fightButton").text("Choose next opponent"); 
+            stage++;
+            if(stage ===4){
+                finnFightingCapAfterRey();
+            }       
         } 
         });   
     });   
@@ -1098,6 +1141,10 @@ function finnFightingReyAfterCap(){
                 $(".rey").css("display", "none");
                 $(".fightButton").addClass('disabled');
                 $(".fightButton").text("Choose next opponent");
+                stage++;
+                if(stage === 4){
+                    finnFightingSnokeAfterCap();
+                }
             } 
         });
     });
@@ -1126,7 +1173,11 @@ function finnFightingSnokeAfterCap(){
             $(".snokeHp").text(playerSnoke.hp);
             $(".snoke").css("display", "none");
             $(".fightButton").addClass('disabled');
-            $(".fightButton").text("Choose next opponent");        
+            $(".fightButton").text("Choose next opponent");   
+            stage++;
+            if(stage === 4){
+                finnFightingReyAfterCap();
+            }     
         } 
         });   
     });   
@@ -1159,6 +1210,10 @@ function finnFightingCapAfterSnoke(){
                 $(".cap").css("display", "none");
                 $(".fightButton").addClass('disabled');
                 $(".fightButton").text("Choose next opponent");
+                stage++;
+                if(stage === 4){
+                    finnFightingReyAfterSnoke();
+                }
             } 
         });
     });
@@ -1193,6 +1248,10 @@ function finnFightingReyAfterSnoke(){
                 $(".rey").css("display", "none");
                 $(".fightButton").addClass('disabled');
                 $(".fightButton").text("Choose next opponent");
+                stage++;
+                if(stage == 4){
+                    finnFightingCapAfterSnoke();
+                }
             } 
         });
     });
