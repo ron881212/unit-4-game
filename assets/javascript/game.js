@@ -5,19 +5,20 @@ var playerRey = {
     gender: "Female",
     affiliation: "Resistance",
     homeworld: "Jakku",
-    counterAp: 20,
-    hp: 150,
-    ap: 12
+    counterAp: 6,
+    hp: 100,
+    ap: 5
 };
 
+// console.log(playerRey.ap);
 var playerFinn = {
     name: "Finn",
     gender: "Male",
     affiliation: "Resistance",
     homeworld: "Artorias",
-    counterAp: 25,
-    hp: 200,
-    ap: 15
+    counterAp: 5,
+    hp: 120,
+    ap: 6
     
 };
 
@@ -26,9 +27,9 @@ var playerPhasma = {
     gender: "Female",
     affiliation: "First Order",
     homeworld: "Parnassos",
-    counterAp: 30,
-    hp: 250,
-    ap: 18
+    counterAp: 8,
+    hp: 150,
+    ap: 8
 };
 
 var playerSnoke = {
@@ -36,9 +37,9 @@ var playerSnoke = {
     gender: "Male",
     affiliation: "First Order",
     homeworld: "Unknown",
-    counterAp: 35,
-    hp: 300,
-    ap: 22
+    counterAp: 10,
+    hp: 180,
+    ap: 10
 };
 
 // Players HP is conencted to thier Badge
@@ -52,8 +53,8 @@ $(".snokeHp").text(playerSnoke.hp);
 function fight(attacker, defender, defender2, attacker2){
     // If the user is Rey
     if(attacker === playerRey.hp){    
+        opponHp = defender2 - (playerRey.ap = playerRey.ap + 8);
         yourHp = attacker - defender;
-        opponHp = defender2 - attacker2;
         playerRey.hp = yourHp;
         if(defender2 === playerFinn.hp){
             playerFinn.hp = opponHp;
@@ -65,13 +66,13 @@ function fight(attacker, defender, defender2, attacker2){
         $(".finnHp").text(playerFinn.hp);
         $(".capHp").text(playerPhasma.hp);
         $(".snokeHp").text(playerSnoke.hp);
-        var group = [playerRey.hp, playerFinn.hp, playerPhasma.hp, playerSnoke.hp];
-        return group[0,1,2,3];
+        var group = [playerRey.hp, playerFinn.hp, playerPhasma.hp, playerSnoke.hp, playerRey.ap];
+        return group[0,1,2,3,4];
     }
     // If the user is Finn
     if(attacker === playerFinn.hp){    
         yourHp = attacker - defender;
-        opponHp = defender2 - attacker2;
+        opponHp = defender2 - (playerFinn.ap = playerFinn.ap + 8);
         playerFinn.hp = yourHp;
         if(defender2 === playerRey.hp){
             playerRey.hp = opponHp;
@@ -83,13 +84,13 @@ function fight(attacker, defender, defender2, attacker2){
         $(".finnHp").text(playerFinn.hp);
         $(".capHp").text(playerPhasma.hp);
         $(".snokeHp").text(playerSnoke.hp);
-        var group = [playerRey.hp, playerFinn.hp, playerPhasma.hp, playerSnoke.hp];
-        return group[0,1,2,3];
+        var group = [playerRey.hp, playerFinn.hp, playerPhasma.hp, playerSnoke.hp, playerFinn.ap];
+        return group[0,1,2,3,4];
     }
     // If the user is Phasma
     if(attacker === playerPhasma.hp){    
         yourHp = attacker - defender;
-        opponHp = defender2 - attacker2;
+        opponHp = defender2 - (playerPhasma.ap = playerPhasma.ap + 6);
         playerPhasma.hp = yourHp;
         if(defender2 === playerFinn.hp){
             playerFinn.hp = opponHp;
@@ -101,13 +102,13 @@ function fight(attacker, defender, defender2, attacker2){
         $(".finnHp").text(playerFinn.hp);
         $(".capHp").text(playerPhasma.hp);
         $(".snokeHp").text(playerSnoke.hp);
-        var group = [playerRey.hp, playerFinn.hp, playerPhasma.hp, playerSnoke.hp];
-        return group[0,1,2,3];
+        var group = [playerRey.hp, playerFinn.hp, playerPhasma.hp, playerSnoke.hp, playerPhasma.ap];
+        return group[0,1,2,3,4];
     }
     // If the user is Snoke
     if(attacker === playerSnoke.hp){    
         yourHp = attacker - defender;
-        opponHp = defender2 - attacker2;
+        opponHp = defender2 - (playerSnoke.ap = playerSnoke.ap + 1);
         playerSnoke.hp = yourHp;
         if(defender2 === playerFinn.hp){
             playerFinn.hp = opponHp;
@@ -119,8 +120,8 @@ function fight(attacker, defender, defender2, attacker2){
         $(".finnHp").text(playerFinn.hp);
         $(".capHp").text(playerPhasma.hp);
         $(".snokeHp").text(playerSnoke.hp);
-        var group = [playerRey.hp, playerFinn.hp, playerPhasma.hp, playerSnoke.hp];
-        return group[0,1,2,3];
+        var group = [playerRey.hp, playerFinn.hp, playerPhasma.hp, playerSnoke.hp, playerSnoke.ap];
+        return group[0,1,2,3,4];
     }
 
 }
@@ -226,7 +227,7 @@ var stage = 0;
 $(".rey").dblclick(function () {
     if (stage === 0) {
         $(".players").css("display", "none");
-        $(".playersAtStart1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">150</span>' + '<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
+        $(".playersAtStart1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">200</span>' + '<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
         $(".playersInHolding1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
         $(".playersInHolding2").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
         $(".playersInHolding3").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
@@ -1074,7 +1075,7 @@ function ReyfightingCapAfterFinn(){
 function ReyfightingSnokeAfterFinn(){
     $(".snokePlayer").dblclick(function () {
         $(".snoke").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+        $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
         $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 12 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 35 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
