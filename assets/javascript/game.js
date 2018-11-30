@@ -53,7 +53,7 @@ $(".snokeHp").text(playerSnoke.hp);
 function fight(attacker, defender, defender2, attacker2){
     // If the user is Rey
     if(attacker === playerRey.hp){    
-        opponHp = defender2 - (playerRey.ap = playerRey.ap + 8);
+        opponHp = defender2 - (playerRey.ap = playerRey.ap + 10);
         yourHp = attacker - defender;
         playerRey.hp = yourHp;
         if(defender2 === playerFinn.hp){
@@ -90,7 +90,7 @@ function fight(attacker, defender, defender2, attacker2){
     // If the user is Phasma
     if(attacker === playerPhasma.hp){    
         yourHp = attacker - defender;
-        opponHp = defender2 - (playerPhasma.ap = playerPhasma.ap + 6);
+        opponHp = defender2 - (playerPhasma.ap = playerPhasma.ap + 3);
         playerPhasma.hp = yourHp;
         if(defender2 === playerFinn.hp){
             playerFinn.hp = opponHp;
@@ -108,7 +108,7 @@ function fight(attacker, defender, defender2, attacker2){
     // If the user is Snoke
     if(attacker === playerSnoke.hp){    
         yourHp = attacker - defender;
-        opponHp = defender2 - (playerSnoke.ap = playerSnoke.ap + 1);
+        opponHp = defender2 - (playerSnoke.ap = playerSnoke.ap);
         playerSnoke.hp = yourHp;
         if(defender2 === playerFinn.hp){
             playerFinn.hp = opponHp;
@@ -185,25 +185,25 @@ $("#snokeLogo").mouseover(function () {
 // Displays Rey info when you click on her
 
 $("#reyPlayer").on("click", function () {
-    $("#fightCard").html('<img class="card-img-top" src="assets/images/rey.png" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Rey</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Jakku</h4>' + '<h4>HP: 150</h4>');
+    $("#fightCard").html('<img class="card-img-top" src="assets/images/rey.png" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Rey</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Jakku</h4>' + '<h4>HP: 100</h4>');
 });
 
 // Displays Finn info when you click on him
 
 $("#finnPlayer").on("click", function () {
-    $("#fightCard").html('<img class="card-img-top" src="assets/images/finn.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Finn</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Artorias</h4>' + '<h4>HP: 200</h4>');
+    $("#fightCard").html('<img class="card-img-top" src="assets/images/finn.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Finn</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Artorias</h4>' + '<h4>HP: 120</h4>');
 });
 
 // Displays Phasma info when you click on her
 
 $("#capPlayer").on("click", function () {
-    $("#fightCard").html('<img class="card-img-top" src="assets/images/captain_phasma.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Captain Phasma</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Parnassos</h4>' + '<h4>HP: 250</h4>');
+    $("#fightCard").html('<img class="card-img-top" src="assets/images/captain_phasma.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Captain Phasma</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Parnassos</h4>' + '<h4>HP: 150</h4>');
 });
 
 // Displays Surpreme Leader Snoke info when you click on him
 
 $("#snokePlayer").on("click", function () {
-    $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 300</h4>');
+    $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 180</h4>');
 });
 
 //Displays The Resistances info when you click on the logo
@@ -227,10 +227,10 @@ var stage = 0;
 $(".rey").dblclick(function () {
     if (stage === 0) {
         $(".players").css("display", "none");
-        $(".playersAtStart1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">200</span>' + '<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
-        $(".playersInHolding1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
-        $(".playersInHolding2").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
-        $(".playersInHolding3").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+        $(".playersAtStart1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">100</span>' + '<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
+        $(".playersInHolding1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+        $(".playersInHolding2").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">150</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+        $(".playersInHolding3").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
         $(".pickPlayer").text("You Chose Rey");
         $(".pickOpponent").text("Choose Your Opponent");
         stage++;
@@ -248,7 +248,7 @@ $(".rey").dblclick(function () {
                 });
             });
             $(".finn").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/finn.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Finn</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Artorias</h4>' + '<h4>HP: 200</h4>');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/finn.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Finn</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Artorias</h4>' + '<h4>HP: 100</h4>');
             });
             $("#reyLogo, #finnLogo").on("click", function () {
                 $("#fightCard").html('<img class="card-img-top" src="assets/images/logo1.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">The Resistance</h3>' + '<h4> Resistance movement is a private paramilitary force led by General Leia Organa that opposes the First Order<h4>');
@@ -266,7 +266,7 @@ $(".rey").dblclick(function () {
                 });
             });
             $(".cap").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/captain_phasma.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Captain Phasma</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Parnassos</h4>' + '<h4>HP: 250</h4>');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/captain_phasma.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Captain Phasma</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Parnassos</h4>' + '<h4>HP: 150</h4>');
             });
             $(".logo2").on("click", function () {
                 $("#fightCard").html('<img class="card-img-top" src="assets/images/logo2.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">First Order</h3>' + '<h4>The First Order is an autocratic military dictatorship. It is the canonical counterpart of the Dark Empire.<h4>');
@@ -284,7 +284,7 @@ $(".rey").dblclick(function () {
                 });
             });
             $(".snokePlayer").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 300</h4>');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 180</h4>');
             });
             stage++;
         }
@@ -293,12 +293,12 @@ $(".rey").dblclick(function () {
             $(".finnPlayer").dblclick(function(){
             stage++;
             $(".finn").css("display", "none");
-            $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn"  class="img-thumbnail rounded-circle finn players player-img finnPlayer"  id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1"  class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+            $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn"  class="img-thumbnail rounded-circle finn players player-img finnPlayer"  id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1"  class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
             $(".cap").css("display", "none");
             $(".playersInHolding1").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
             $(".snoke").css("display", "none");
-            $(".playersInHolding2").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">')
-            $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 12 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 25 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+            $(".playersInHolding2").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">')
+            $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 5 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 5 Damage<h4>' + '<h4>Fight Stats Here</h4>');
             $(".fightButton").removeClass("disabled");
             $(".fightButton").on("click", function(){
                 fight(playerRey.hp, playerFinn.counterAp, playerFinn.hp, playerRey.ap);
@@ -329,11 +329,11 @@ $(".rey").dblclick(function () {
             $(".capPlayer").dblclick(function () {
             stage++;
             $(".cap").css("display", "none");
-            $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+            $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">150</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
             $(".snoke").css("display", "none");
-            $(".playersInHolding2").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
-            $(".playersInHolding1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
-            $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 12 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Phasma Deals 30 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+            $(".playersInHolding2").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+            $(".playersInHolding1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+            $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 5 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Phasma Deals 8 Damage<h4>' + '<h4>Fight Stats Here</h4>');
             $(".fightButton").removeClass("disabled");
             $(".fightButton").on("click", function(){
             fight(playerRey.hp, playerPhasma.counterAp, playerPhasma.hp, playerRey.ap);
@@ -361,12 +361,12 @@ $(".rey").dblclick(function () {
             $(".snokePlayer").dblclick(function () {
                 stage++;
                 $(".snoke").css("display", "none");
-                $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+                $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
                 $(".finn").css("display", "none");
-                $(".playersInHolding1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+                $(".playersInHolding1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
                 $(".cap").css("display", "none");
-                $(".playersInHolding2").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 12 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 35 Damage<h4>' + '<h4>Fight Stats Here</h4>'); $(".fightButton").removeClass("disabled");
+                $(".playersInHolding2").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">150</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 5 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 10 Damage<h4>' + '<h4>Fight Stats Here</h4>'); $(".fightButton").removeClass("disabled");
                 $(".fightButton").on("click", function(){
                 fight(playerRey.hp, playerSnoke.counterAp, playerSnoke.hp, playerRey.ap);
                 if(playerRey.hp < 1){
@@ -397,10 +397,10 @@ $(".rey").dblclick(function () {
 $(".finn").dblclick(function () {
     if (stage === 0) {
         $(".players").css("display", "none");
-        $(".playersAtStart1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+        $(".playersAtStart1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
         $(".playersInHolding1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">150</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
-        $(".playersInHolding2").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img     src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
-        $(".playersInHolding3").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img   src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+        $(".playersInHolding2").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">150</span>' +'<img     src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+        $(".playersInHolding3").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img   src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
         $(".pickPlayer").text("You Chose Finn");
         $(".pickOpponent").text("Choose Your Opponent");
         stage++;
@@ -419,7 +419,7 @@ $(".finn").dblclick(function () {
                 });
             });
             $(".reyPlayer").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/rey.png" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Rey</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Jakku</h4>' + '<h4>HP: 150</h4>');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/rey.png" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Rey</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Jakku</h4>' + '<h4>HP: 100</h4>');
             });
             $("#capLogo").mouseover(function () {
                 $(this).css("border", "4px solid black");
@@ -437,7 +437,7 @@ $(".finn").dblclick(function () {
                 $("#fightCard").html('<img class="card-img-top" src="assets/images/logo2.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">First Order</h3>' + '<h4>The First Order is an autocratic military dictatorship. It is the canonical counterpart of the Dark Empire.<h4>');
             });
             $(".capPlayer").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/captain_phasma.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Captain Phasma</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Parnassos</h4>' + '<h4>HP: 250</h4>');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/captain_phasma.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Captain Phasma</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Parnassos</h4>' + '<h4>HP: 150</h4>');
             });
             $("#snokeLogo").mouseover(function () {
                 $(this).css("border", "4px solid black");
@@ -452,7 +452,7 @@ $(".finn").dblclick(function () {
                 });
             });
             $(".snokePlayer").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 300</h4>');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 180</h4>');
             });
             stage++;
         }
@@ -461,12 +461,12 @@ $(".finn").dblclick(function () {
             $(".reyPlayer").dblclick(function(){
             stage++;
             $(".rey").css("display", "none");
-            $(".fightingArea").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">150</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
+            $(".fightingArea").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">100</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
             $(".cap").css("display", "none");
-            $(".playersInHolding1").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+            $(".playersInHolding1").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">150</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
             $(".snoke").css("display", "none");
-            $(".playersInHolding2").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">')
-            $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Finn Deals 15 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Rey  Deals 20 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+            $(".playersInHolding2").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">')
+            $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Finn Deals 6 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Rey  Deals 6 Damage<h4>' + '<h4>Fight Stats Here</h4>');
             $(".fightButton").removeClass("disabled");
             $(".fightButton").on("click", function(){
                 fight(playerFinn.hp, playerRey.counterAp, playerRey.hp, playerFinn.ap);
@@ -493,12 +493,12 @@ $(".finn").dblclick(function () {
             $(".capPlayer").dblclick(function () {
             stage++;
             $(".cap").css("display", "none");
-            $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+            $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">150</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
             $(".rey").css("display", "none");
-            $(".playersInHolding1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">150</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
+            $(".playersInHolding1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">100</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
             $(".snoke").css("display", "none");
-            $(".playersInHolding2").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
-            $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Finn Deals 15 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Phasma Deals 30 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+            $(".playersInHolding2").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+            $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Finn Deals 6 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Phasma Deals 8 Damage<h4>' + '<h4>Fight Stats Here</h4>');
             $(".fightButton").removeClass("disabled");
             $(".fightButton").on("click", function(){
                 fight(playerFinn.hp, playerPhasma.counterAp, playerPhasma.hp, playerFinn.ap);
@@ -525,12 +525,12 @@ $(".finn").dblclick(function () {
             $(".snokePlayer").dblclick(function () {
                 stage++;
                 $(".snoke").css("display", "none");
-                $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+                $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
                 $(".cap").css("display", "none");
-                $(".playersInHolding2").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+                $(".playersInHolding2").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">150</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
                 $(".rey").css("display", "none");
-                $(".playersInHolding1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">150</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Finn Deals 15 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 35 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+                $(".playersInHolding1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">100</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Finn Deals 6 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 10 Damage<h4>' + '<h4>Fight Stats Here</h4>');
                 $(".fightButton").removeClass("disabled");
                 $(".fightButton").on("click", function(){
                     fight(playerFinn.hp, playerSnoke.counterAp, playerSnoke.hp, playerFinn.ap);
@@ -560,10 +560,10 @@ $(".finn").dblclick(function () {
 $(".cap").dblclick(function () {
     if (stage === 0) {
         $(".players").css("display", "none");
-        $(".playersAtStart1").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
-        $(".playersInHolding1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">150</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
-        $(".playersInHolding2").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
-        $(".playersInHolding3").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+        $(".playersAtStart1").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">150</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+        $(".playersInHolding1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">100</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
+        $(".playersInHolding2").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+        $(".playersInHolding3").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
         $(".pickPlayer").text("You Chose Captian Phasma");
         $(".pickOpponent").text("Choose Your Opponent");
         stage++;
@@ -582,7 +582,7 @@ $(".cap").dblclick(function () {
                 });
             });
             $(".snokePlayer").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 300</h4>');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/snoke.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Surpreme Leader Snoke</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Unknown</h4>' + '<h4>HP: 180</h4>');
             });
             $(".finn").mouseover(function () {
                 $(this).css("border", "4px solid red");
@@ -600,7 +600,7 @@ $(".cap").dblclick(function () {
                 $("#fightCard").html('<img class="card-img-top" src="assets/images/logo1.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">The Resistance</h3>' + '<h4> Resistance movement is a private paramilitary force led by General Leia Organa that opposes the First Order<h4>');
             });
             $(".finnPlayer").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/finn.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Finn</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Artorias</h4>' + '<h4>HP: 200</h4>');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/finn.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Finn</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Artorias</h4>' + '<h4>HP: 120</h4>');
             });
             $("#reyPlayer").mouseover(function () {
                 $(this).css("border", "4px solid red");
@@ -615,7 +615,7 @@ $(".cap").dblclick(function () {
                 });
             });
             $(".reyPlayer").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/rey.png" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Rey</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Jakku</h4>' + '<h4>HP: 150</h4>');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/rey.png" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Rey</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Jakku</h4>' + '<h4>HP: 100</h4>');
             });
             stage++;
         }
@@ -624,13 +624,13 @@ $(".cap").dblclick(function () {
             $(".reyPlayer").dblclick(function(){
             stage++;
             $(".rey").css("display", "none");
-            $(".fightingArea").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">150</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">'); 
+            $(".fightingArea").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">100</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">'); 
             $(".cap").css("display", "none");
-            $(".playersAtStart1").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
-            $(".playersInHolding1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+            $(".playersAtStart1").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">150</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+            $(".playersInHolding1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
             $(".snoke").css("display", "none");
-            $(".playersInHolding2").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
-            $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Phasma Deals 18 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Rey Deals 20 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+            $(".playersInHolding2").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+            $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Phasma Deals 8 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Rey Deals 6 Damage<h4>' + '<h4>Fight Stats Here</h4>');
             $(".fightButton").removeClass("disabled");
             $(".fightButton").on("click", function(){
                 fight(playerPhasma.hp, playerRey.counterAp, playerRey.hp, playerPhasma.ap);
@@ -657,14 +657,14 @@ $(".cap").dblclick(function () {
             $(".finnPlayer").dblclick(function () {
             stage++;
             $(".finn").css("display", "none");
-            $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+            $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
             $(".rey").css("display", "none");
-            $(".playersInHolding1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">150</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
+            $(".playersInHolding1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">100</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
             $(".snoke").css("display", "none");
-            $(".playersInHolding2").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+            $(".playersInHolding2").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
             $(".cap").css("display", "none");
-            $(".playersAtStart1").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
-            $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Phasma Deals 18 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 25 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+            $(".playersAtStart1").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">150</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+            $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Phasma Deals 8 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 5 Damage<h4>' + '<h4>Fight Stats Here</h4>');
             $(".fightButton").removeClass("disabled");
             $(".fightButton").on("click", function(){
                 fight(playerPhasma.hp, playerFinn.counterAp, playerFinn.hp, playerPhasma.ap);
@@ -691,13 +691,13 @@ $(".cap").dblclick(function () {
             $(".snokePlayer").dblclick(function () {
                 stage++;
                 $(".snoke").css("display", "none");
-                $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">')
+                $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">')
                 $(".rey").css("display", "none");
-                $(".playersInHolding1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer"  id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">150</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
+                $(".playersInHolding1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer"  id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">100</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
                 $(".finn").css("display", "none");
-                $(".playersInHolding2").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+                $(".playersInHolding2").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
                 $(".fightButton").removeClass("disabled");
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Phasma Deals 18 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 35 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Phasma Deals 8 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 10 Damage<h4>' + '<h4>Fight Stats Here</h4>');
                 $(".fightButton").removeClass("disabled");
             $(".fightButton").on("click", function(){
                 fight(playerPhasma.hp, playerSnoke.counterAp, playerSnoke.hp, playerPhasma.ap);
@@ -728,10 +728,10 @@ $(".cap").dblclick(function () {
 $(".snoke").dblclick(function () {
     if (stage === 0) {
         $(".players").css("display", "none");
-        $(".playersAtStart1").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
-        $(".playersInHolding1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">150</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
-        $(".playersInHolding2").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
-        $(".playersInHolding3").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+        $(".playersAtStart1").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+        $(".playersInHolding1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">100</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
+        $(".playersInHolding2").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+        $(".playersInHolding3").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
         $(".pickPlayer").text("You Chose Supreme Leader Snoke");
         $(".pickOpponent").text("Choose Your Opponent");
         stage++;
@@ -753,7 +753,7 @@ $(".snoke").dblclick(function () {
                 $("#fightCard").html('<img class="card-img-top" src="assets/images/logo1.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">The Resistance</h3>' + '<h4> Resistance movement is a private paramilitary force led by General Leia Organa that opposes the First Order<h4>');
             });
             $(".finnPlayer").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/finn.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Finn</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Artorias</h4>' + '<h4>HP: 200</h4>');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/finn.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Finn</h3>' + '<h4>Gender: Male</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Artorias</h4>' + '<h4>HP: 120</h4>');
             });
             $("#reyPlayer").mouseover(function () {
                 $(this).css("border", "4px solid red");
@@ -768,7 +768,7 @@ $(".snoke").dblclick(function () {
                 });
             });
             $(".reyPlayer").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/rey.png" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Rey</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Jakku</h4>' + '<h4>HP: 150</h4>');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/rey.png" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Rey</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: Resistance<h4>' + '<h4> Homeworld: Jakku</h4>' + '<h4>HP: 100</h4>');
             });
             $("#capLogo").mouseover(function () {
                 $(this).css("border", "4px solid black");
@@ -783,7 +783,7 @@ $(".snoke").dblclick(function () {
                 });
             });
             $(".capPlayer").on("click", function () {
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/captain_phasma.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Captain Phasma</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Parnassos</h4>' + '<h4>HP: 250</h4>');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/captain_phasma.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Captain Phasma</h3>' + '<h4>Gender: Female</h4>' + '<h4>Affiliation: First Order<h4>' + '<h4> Homeworld: Parnassos</h4>' + '<h4>HP: 180</h4>');
             });
             stage++;
         }
@@ -792,13 +792,13 @@ $(".snoke").dblclick(function () {
             $(".reyPlayer").dblclick(function(){
             stage++;
             $(".rey").css("display", "none");
-            $(".fightingArea").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">150</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
+            $(".fightingArea").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">100</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
             $(".cap").css("display", "none");
             $(".snoke").css("display", "none");
-            $(".playersAtStart1").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">')
-            $(".playersInHolding1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">')
-            $(".playersInHolding2").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">')
-            $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Snoke Deals 22 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Rey Deals 20 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+            $(".playersAtStart1").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">')
+            $(".playersInHolding1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">')
+            $(".playersInHolding2").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">150</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">')
+            $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Snoke Deals 10 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Rey Deals 5 Damage<h4>' + '<h4>Fight Stats Here</h4>');
             $(".fightButton").removeClass("disabled");
             $(".fightButton").on("click", function(){
                 fight(playerSnoke.hp, playerRey.counterAp, playerRey.hp, playerSnoke.ap);
@@ -825,12 +825,12 @@ $(".snoke").dblclick(function () {
             $(".finnPlayer").dblclick(function () {
             stage++;
             $(".finn").css("display", "none");
-            $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">')
+            $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">')
             $(".cap").css("display", "none");
-            $(".playersInHolding2").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+            $(".playersInHolding2").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">150</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
             $(".rey").css("display", "none");
-            $(".playersInHolding1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">150</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
-            $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Snoke Deals 22 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 25 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+            $(".playersInHolding1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">100</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
+            $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Snoke Deals 10 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 5 Damage<h4>' + '<h4>Fight Stats Here</h4>');
             $(".fightButton").removeClass("disabled");
             $(".fightButton").on("click", function(){
                 fight(playerSnoke.hp, playerFinn.counterAp, playerFinn.hp, playerSnoke.ap);
@@ -857,13 +857,13 @@ $(".snoke").dblclick(function () {
             $(".capPlayer").dblclick(function () {
                 stage++;
                 $(".cap").css("display", "none");
-                $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">')
+                $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">')
                 $(".rey").css("display", "none");
-                $(".playersInHolding1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer"  id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">150</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
+                $(".playersInHolding1").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer"  id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">100</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
                 $(".finn").css("display", "none");
-                $(".playersInHolding2").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+                $(".playersInHolding2").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
                 $(".fightButton").removeClass("disabled");
-                $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Snoke Deals 22 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Phasma Deals 30 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+                $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Snoke Deals 10 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Phasma Deals 8 Damage<h4>' + '<h4>Fight Stats Here</h4>');
                 $(".fightButton").removeClass("disabled");
                 $(".fightButton").on("click", function(){
                     fight(playerSnoke.hp, playerPhasma.counterAp, playerPhasma.hp, playerSnoke.ap);
@@ -895,10 +895,10 @@ console.log("1st stage");
 function ReyfightingFinnAfterSnoke(){
     $(".finnPlayer").dblclick(function(){
         $(".finn").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn"  class="img-thumbnail rounded-circle finn players player-img finnPlayer"  id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1"  class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+        $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn"  class="img-thumbnail rounded-circle finn players player-img finnPlayer"  id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1"  class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
         $(".cap").css("display", "none");
-        $(".playersInHolding1").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 12 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 25 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".playersInHolding1").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 5 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 5 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         if(playerPhasma.hp < 1){
@@ -933,8 +933,8 @@ function ReyfightingFinnAfterSnoke(){
 function ReyfightingCapAfterSnoke(){
     $(".capPlayer").dblclick(function () {
         $(".cap").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 12 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Phasma Deals 30 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">150</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 5 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Phasma Deals 8 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         $(".fightButton").on("click", function(){
@@ -966,10 +966,10 @@ function ReyfightingCapAfterSnoke(){
 function ReyfightingFinnAfterCap(){
     $(".finnPlayer").dblclick(function(){
         $(".finn").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn"  class="img-thumbnail rounded-circle finn players player-img finnPlayer"  id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1"  class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+        $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn"  class="img-thumbnail rounded-circle finn players player-img finnPlayer"  id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1"  class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
         $(".snoke").css("display", "none");
-        $(".playersInHolding1").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 12 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 25 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".playersInHolding1").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 5 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 5 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         if(playerSnoke.hp < 1){
@@ -1004,8 +1004,8 @@ function ReyfightingFinnAfterCap(){
 function ReyfightingSnokeAfterCap(){
     $(".snokePlayer").dblclick(function () {
         $(".snoke").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 12 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 35 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 5 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 10 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         $(".fightButton").on("click", function(){
@@ -1037,10 +1037,10 @@ function ReyfightingSnokeAfterCap(){
 function ReyfightingCapAfterFinn(){
     $(".capPlayer").dblclick(function(){
         $(".cap").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+        $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">150</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
         $(".snoke").css("display", "none");
-        $(".playersInHolding1").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 12 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Phasma Deals 30 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".playersInHolding1").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 5 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Phasma Deals 8 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         if(playerSnoke.hp < 1){
@@ -1075,8 +1075,8 @@ function ReyfightingCapAfterFinn(){
 function ReyfightingSnokeAfterFinn(){
     $(".snokePlayer").dblclick(function () {
         $(".snoke").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 12 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 35 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Rey Deals 5 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 10 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         $(".fightButton").on("click", function(){
@@ -1110,10 +1110,10 @@ function ReyfightingSnokeAfterFinn(){
 function finnFightingCapAfterRey(){
     $(".capPlayer").dblclick(function(){
         $(".cap").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+        $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">150</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
         $(".snoke").css("display", "none");
-        $(".playersInHolding1").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Finn Deals 15 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Phasma Deals 30 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".playersInHolding1").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Finn Deals 5 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Phasma Deals 8 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         if(playerSnoke.hp < 1){
@@ -1148,8 +1148,8 @@ function finnFightingCapAfterRey(){
 function finnFightingSnokeAfterRey(){
     $(".snokePlayer").dblclick(function () {
         $(".snoke").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Finn Deals 15 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 35 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Finn Deals 5 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 10 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         $(".fightButton").on("click", function(){
@@ -1181,10 +1181,10 @@ function finnFightingSnokeAfterRey(){
 function finnFightingReyAfterCap(){
     $(".reyPlayer").dblclick(function(){
         $(".rey").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">150</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
+        $(".fightingArea").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">100</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
         $(".snoke").css("display", "none");
-        $(".playersInHolding1").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Finn Deals 15 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Phasma Deals 25 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".playersInHolding1").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Finn Deals 6 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Phasma Deals 8 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         if(playerSnoke.hp < 1){
@@ -1220,8 +1220,8 @@ function finnFightingReyAfterCap(){
 function finnFightingSnokeAfterCap(){
     $(".snokePlayer").dblclick(function () {
         $(".snoke").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Finn Deals 15 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 35 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Finn Deals 6 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 10 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         $(".fightButton").on("click", function(){
@@ -1253,8 +1253,8 @@ function finnFightingSnokeAfterCap(){
 function finnFightingCapAfterSnoke(){
     $(".capPlayer").dblclick(function(){
         $(".cap").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Finn Deals 15 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Phasma Deals 30 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">150</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Finn Deals 6 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Phasma Deals 8 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         if(playerRey.hp < 1){
@@ -1289,10 +1289,10 @@ function finnFightingCapAfterSnoke(){
 function finnFightingReyAfterSnoke(){
     $(".reyPlayer").dblclick(function(){
         $(".rey").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">150</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
+        $(".fightingArea").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">100</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
         $(".cap").css("display", "none");
-        $(".playersInHolding1").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Finn Deals 15 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Rey Deals 20 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".playersInHolding1").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">150</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Finn Deals 6 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Rey Deals 6 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         if(playerPhasma.hp < 1){
@@ -1329,10 +1329,10 @@ function finnFightingReyAfterSnoke(){
 function capFightingFinnAfterRey(){
     $(".finnPlayer").dblclick(function(){
         $(".finn").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn"  class="img-thumbnail rounded-circle finn players player-img finnPlayer"  id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1"  class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+        $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn"  class="img-thumbnail rounded-circle finn players player-img finnPlayer"  id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1"  class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
         $(".snoke").css("display", "none");
-        $(".playersInHolding1").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Phasma Deals 18 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 25 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".playersInHolding1").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Phasma Deals 8 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 6 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         if(playerSnoke.hp < 1){
@@ -1367,8 +1367,8 @@ function capFightingFinnAfterRey(){
 function capFightingSnokeAfterRey(){
     $(".snokePlayer").dblclick(function () {
         $(".snoke").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Phasma Deals 18 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 35 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Phasma Deals 8 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 10 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         $(".fightButton").on("click", function(){
@@ -1400,10 +1400,10 @@ function capFightingSnokeAfterRey(){
 function capFightingReyAfterFinn(){
     $(".reyPlayer").dblclick(function(){
         $(".rey").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">150</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
+        $(".fightingArea").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">100</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
         $(".snoke").css("display", "none");
-        $(".playersInHolding1").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Phasma Deals 18 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Rey Deals 20 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".playersInHolding1").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Phasma Deals 8 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Rey Deals 6 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         if(playerSnoke.hp < 1){
@@ -1438,8 +1438,8 @@ function capFightingReyAfterFinn(){
 function capFightingSnokeAfterFinn(){
     $(".snokePlayer").dblclick(function () {
         $(".snoke").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">300</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Phasma Deals 18 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 35 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".fightingArea").html('<img src="assets/images/snoke.jpg" alt="snoke" class="img-thumbnail rounded-circle snoke players player-img snokePlayer" id="snokePlayer">' + '<span class="badge badge-pill badge-dark snoke players snokeHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo snoke players logo2" id="snokeLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Phasma Deals 8 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 10 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         $(".fightButton").on("click", function(){
@@ -1471,10 +1471,10 @@ function capFightingSnokeAfterFinn(){
 function capFightingReyAfterSnoke(){
     $(".reyPlayer").dblclick(function(){
         $(".rey").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">150</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
+        $(".fightingArea").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">100</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
         $(".finn").css("display", "none");
-        $(".playersInHolding1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Phasma Deals 18 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Rey Deals 20 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".playersInHolding1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Phasma Deals 8 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Rey Deals 6 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         if(playerFinn.hp < 1){
@@ -1510,8 +1510,8 @@ function capFightingReyAfterSnoke(){
 function capFightingFinnAfterSnoke(){
     $(".finnPlayer").dblclick(function(){
         $(".finn").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn"  class="img-thumbnail rounded-circle finn players player-img finnPlayer"  id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1"  class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Phasma Deals 18 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 35 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn"  class="img-thumbnail rounded-circle finn players player-img finnPlayer"  id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1"  class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Phasma Deals 8 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Snoke Deals 10 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         if(playerRey.hp < 1){
@@ -1548,10 +1548,10 @@ function capFightingFinnAfterSnoke(){
 function SnokefightingFinnAfterRey(){
     $(".finnPlayer").dblclick(function(){
         $(".finn").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn"  class="img-thumbnail rounded-circle finn players player-img finnPlayer"  id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1"  class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+        $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn"  class="img-thumbnail rounded-circle finn players player-img finnPlayer"  id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1"  class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
         $(".cap").css("display", "none");
-        $(".playersInHolding1").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Snoke Deals 22 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 25 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".playersInHolding1").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">150</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Snoke Deals 10 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 6 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         if(playerPhasma.hp < 1){
@@ -1586,10 +1586,10 @@ function SnokefightingFinnAfterRey(){
 function snokeFightingCapAfterRey(){
     $(".capPlayer").dblclick(function(){
         $(".cap").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+        $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">180</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
         $(".finn").css("display", "none");
-        $(".playersInHolding1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Snoke Deals 22 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Rey Deals 20 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".playersInHolding1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Snoke Deals 10 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Rey Deals 6 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         if(playerFinn.hp < 1){
@@ -1624,10 +1624,10 @@ function snokeFightingCapAfterRey(){
 function snokeFightingReyAfterFinn(){
     $(".reyPlayer").dblclick(function(){
         $(".rey").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">150</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
+        $(".fightingArea").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">100</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
         $(".cap").css("display", "none");
-        $(".playersInHolding1").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Snoke Deals 22 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Rey Deals 20 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".playersInHolding1").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">150</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Snoke Deals 10 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Rey Deals 6 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         if(playerPhasma.hp < 1){
@@ -1663,8 +1663,8 @@ function snokeFightingReyAfterFinn(){
 function snokeFightingCapAfterFinn(){
     $(".capPlayer").dblclick(function(){
         $(".cap").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">250</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Snoke Deals 22 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 25 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".fightingArea").html('<img src="assets/images/captain_phasma.jpg" alt="phasma" class="img-thumbnail rounded-circle cap players player-img capPlayer" id="capPlayer">' + '<span class="badge badge-pill badge-dark cap players capHp">150</span>' +'<img src="assets/images/logo2.jpg" alt="logo2" class="img-thumbnail rounded-circle logo cap players logo2" id="capLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Snoke Deals 10 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 6 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         if(playerRey.hp < 1){
@@ -1699,10 +1699,10 @@ function snokeFightingCapAfterFinn(){
 function snokeFightingReyAfterCap(){
     $(".reyPlayer").dblclick(function(){
         $(".rey").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">150</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
+        $(".fightingArea").html('<img src="assets/images/rey.png" alt="rey" class="img-thumbnail rounded-circle rey players player-img reyPlayer" id="reyPlayer">' + '<span class="badge badge-pill badge-danger rey players reyHp">100</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo rey players logo1" id="reyLogo">');
         $(".finn").css("display", "none");
-        $(".playersInHolding1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Snoke Deals 22 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Rey Deals 20 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".playersInHolding1").html('<img src="assets/images/finn.jpg" alt="finn" class="img-thumbnail rounded-circle finn players player-img finnPlayer" id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1" class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Snoke Deals 10 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Rey Deals 6 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         if(playerFinn.hp < 1){
@@ -1737,8 +1737,8 @@ function snokeFightingReyAfterCap(){
 function snokeFightingFinnAfterCap(){
     $(".finnPlayer").dblclick(function(){
         $(".finn").css("display", "none");
-        $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn"  class="img-thumbnail rounded-circle finn players player-img finnPlayer"  id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">200</span>' +'<img src="assets/images/logo1.jpg" alt="logo1"  class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
-        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Snoke Deals 22 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 25 Damage<h4>' + '<h4>Fight Stats Here</h4>');
+        $(".fightingArea").html('<img src="assets/images/finn.jpg" alt="finn"  class="img-thumbnail rounded-circle finn players player-img finnPlayer"  id="finnPlayer">' + '<span class="badge badge-pill badge-danger finn players finnHp">120</span>' +'<img src="assets/images/logo1.jpg" alt="logo1"  class="img-thumbnail rounded-circle logo finn players logo1" id="finnLogo">');
+        $("#fightCard").html('<img class="card-img-top" src="assets/images/duel.jpg" alt="logo img">' + '<div class="card-body">' + '<h3 class="card-text">Fight!!!</h3>' + '<h4>Snoke Deals 10 Damage</h4>' + '<h4>Your Damage Increases</h4>' +  '<h4>With Each Blow Landed</h4>' + '<h4>Finn Deals 6 Damage<h4>' + '<h4>Fight Stats Here</h4>');
         $(".fightButton").removeClass("disabled");
         $(".fightButton").text("Attack");
         if(playerRey.hp < 1){
